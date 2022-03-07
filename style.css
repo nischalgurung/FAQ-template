@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: rgb(216, 255, 253);
+}
+.container {
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.faq {
+  position: relative;
+  width: 20rem;
+  margin: 10px;
+  padding: 0.5rem 2.5rem;
+  background-color: rgba(255, 255, 255, 0.267);
+  min-width: 20rem;
+  width: 30rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.568);
+  overflow: hidden;
+}
+.faq.active::before {
+  content: "";
+  background: url("https://media.istockphoto.com/photos/question-mark-picture-id1292771469?b=1&k=20&m=1292771469&s=170667a&w=0&h=XU4Moc0bZoR4xywHxRZR0ynUAbpRRt9lQ6ShuoSoBUM=")
+    center center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.25;
+}
+.faq button {
+  position: absolute;
+  top: 1.7rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.781);
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+.faq button .fa-times {
+  display: none;
+}
+.faq.active button .fa-times {
+  display: block;
+}
+.faq.active button .fa-angle-down {
+  display: none;
+}
+.faq .faq-content {
+  display: none;
+}
+.faq.active .faq-content {
+  display: block;
+}
+@media (max-width: 480px) {
+  .faq {
+    width: 90%;
+  }
+}
